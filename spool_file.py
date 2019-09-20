@@ -16,8 +16,6 @@ args = parser.parse_args()
 
 def main():
 
-
-
     output_string = ""
     count = 0
     
@@ -33,17 +31,12 @@ def main():
                 output_string = ""
                 time.sleep(args.interval)
     print_out(output_string) # print remainder of batch when it is less than a full batch size
-
         
 def print_out(output_string):
     sys.stdout.write(output_string)
 
-
-
 def get_file_length():
     return int(os.popen('wc -l '+args.file+' | awk \'{print $1}\' ' ).readline())
-
-
 
 if __name__== "__main__":
   main()
